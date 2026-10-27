@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "rust-lang.rust-analyzer",
+        "probe-rs.probe-rs",
+        "vadimcn.vscode-lldb"
+    ]
+}

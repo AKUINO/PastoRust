@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PastoRust</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <p class="eyebrow">PastoRust</p>
+        <h1>Pilotage du pasteurisateur</h1>
+        <p class="intro">Mesures des entrées et état de l'application. Sur le Pico, GP15 est une entrée physique : son état se commande par le câblage, pas depuis cette page.</p>
+
+        <section class="card" aria-labelledby="inputs-heading">
+            <h2 id="inputs-heading">État des entrées</h2>
+            <div class="row">
+                <div>
+                    <h2>GPIO 15</h2>
+                    <p>Entrée numérique · état actuel</p>
+                </div>
+                <output id="gpio-value">—</output>
+            </div>
+            <div class="row">
+                <div>
+                    <h2>ADC 26</h2>
+                    <p>Valeur actuelle, de 0 à 4095</p>
+                </div>
+                <output id="adc-value">2048</output>
+            </div>
+        </section>
+
+        <section id="simulation-controls" class="card" hidden aria-labelledby="simulation-heading">
+            <h2 id="simulation-heading">Outils de simulation</h2>
+            <p>Ces commandes ne changent que les valeurs simulées sur l'ordinateur.</p>
+            <div class="row">
+                <label for="gpio15">GPIO 15 simulé</label>
+                <label class="toggle">
+                    <input id="gpio15" type="checkbox">
+                    <span class="slider"></span>
+                    <span class="sr-only">Valeur simulée de GPIO 15</span>
+                </label>
+            </div>
+            <label for="adc26">ADC 26 simulé</label>
+            <input id="adc26" type="range" min="0" max="4095" value="2048">
+        </section>
+
+        <p id="status" role="status">Connexion à l'application…</p>
+    </main>
+    <script src="/app.js" defer></script>
+</body>
+</html>

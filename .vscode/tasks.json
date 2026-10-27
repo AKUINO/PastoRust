@@ -1,0 +1,108 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Pico 2 W",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--target",
+                "thumbv8m.main-none-eabihf",
+                "--features",
+                "firmware",
+                "--bin",
+                "pastorust"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Run local Web application",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "run",
+                "--target",
+                "x86_64-unknown-linux-gnu",
+                "--bin",
+                "pastorust-web"
+            ],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Build local Web application",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--target",
+                "x86_64-unknown-linux-gnu",
+                "--bin",
+                "pastorust-web"
+            ],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Flash Pico 2 W (USB)",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "run",
+                "--release",
+                "--target",
+                "thumbv8m.main-none-eabihf",
+                "--features",
+                "firmware",
+                "--bin",
+                "pastorust"
+            ],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Flash USB Hello test",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "run",
+                "--release",
+                "--features",
+                "firmware",
+                "--bin",
+                "usb-hello"
+            ],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Flash Wi-Fi LED test",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "run",
+                "--release",
+                "--features",
+                "firmware",
+                "--bin",
+                "wifi-led-test"
+            ],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Flash GP0 LED test",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "run",
+                "--release",
+                "--features",
+                "firmware",
+                "--bin",
+                "gpio0-led-test"
+            ],
+            "problemMatcher": ["$rustc"]
+        }
+    ]
+}

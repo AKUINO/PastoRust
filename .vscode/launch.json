@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lancer l'application Web locale",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/x86_64-unknown-linux-gnu/debug/pastorust-web",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build local Web application"
+        },
+        {
+            "name": "Déboguer Pico 2 W",
+            "type": "probe-rs-debug",
+            "request": "launch",
+            "chip": "RP2350",
+            "flashingConfig": {
+                "flashingEnabled": true,
+                "haltAfterReset": true
+            },
+            "coreConfigs": [
+                {
+                    "coreIndex": 0,
+                    "programBinary": "${workspaceFolder}/target/thumbv8m.main-none-eabihf/debug/pastorust"
+                }
+            ],
+            "preLaunchTask": "Build Pico 2 W"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+PastoRust — licence CC BY-SA 4.0
+
+Sauf mention contraire, les contenus originaux de PastoRust — notamment le
+code source, la documentation et les ressources Web — sont mis à disposition
+selon les termes de la licence Creative Commons Attribution - Partage dans les
+Mêmes Conditions 4.0 International (CC BY-SA 4.0).
+
+Identifiant SPDX : CC-BY-SA-4.0
+
+Texte légal complet :
+https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr
+
+Cette licence ne couvre pas les éléments de tiers présents dans le dépôt. En
+particulier, les binaires du firmware CYW43 dans `firmware/` restent soumis à
+la licence fournie dans
+`firmware/LICENSE-permissive-binary-license-1.0.txt`, décrite dans
+`firmware/README.md`. Les dépendances logicielles conservent également leurs
+licences respectives.
