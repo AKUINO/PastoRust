@@ -16,8 +16,7 @@
             "request": "launch",
             "chip": "RP2350",
             "flashingConfig": {
-                "flashingEnabled": true,
-                "haltAfterReset": true
+                "flashingEnabled": true
             },
             "coreConfigs": [
                 {
@@ -26,6 +25,22 @@
                 }
             ],
             "preLaunchTask": "Build Pico 2 W"
+        },
+        {
+            "name": "Déboguer test LED GP0",
+            "type": "probe-rs-debug",
+            "request": "launch",
+            "chip": "RP2350",
+            "flashingConfig": {
+                "flashingEnabled": true
+            },
+            "coreConfigs": [
+                {
+                    "coreIndex": 0,
+                    "programBinary": "${workspaceFolder}/target/thumbv8m.main-none-eabihf/debug/gpio0-led-test"
+                }
+            ],
+            "preLaunchTask": "Build GPIO0 LED test"
         }
     ]
 }

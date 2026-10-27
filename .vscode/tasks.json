@@ -21,6 +21,21 @@
             "problemMatcher": ["$rustc"]
         },
         {
+            "label": "Build GPIO0 LED test",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--target",
+                "thumbv8m.main-none-eabihf",
+                "--features",
+                "firmware",
+                "--bin",
+                "gpio0-led-test"
+            ],
+            "problemMatcher": ["$rustc"]
+        },
+        {
             "label": "Run local Web application",
             "type": "process",
             "command": "cargo",
